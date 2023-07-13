@@ -1,0 +1,5 @@
+grim - | swappy -f -
+
+
+
+

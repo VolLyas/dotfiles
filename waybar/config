@@ -1,0 +1,117 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+    "spacing": 4,
+    "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad"],
+    "modules-center": ["custom/media"],
+    "modules-right": ["tray", "sway/language", "pulseaudio", "network", "keyboard-state", "clock", "custom/wlogout"],
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "format": " {icon} ",
+        "format-icons": {
+            "firefox": "",
+            "urgent": "",
+            "focused": "",
+            "default": ""
+        }
+    },
+    "keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "format": "{name} {icon}",
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    },
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "sway/scratchpad": {
+        "format": "{icon} {count}",
+        "show-empty": false,
+        "format-icons": ["", ""],
+        "tooltip": true,
+        "tooltip-format": "{app}: {title}"
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+        "timezone": "Europe/Kyiv",
+        "format": "{:󰥔 %H:%M 󰃮 %d %B,%Y}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><big>{calendar}</big></tt>"
+    },
+    "network": {
+        "format-ethernet": "󰇧",
+        "tooltip-format": "{ifname} via {gwaddr} 󱘖",
+        "format-linked": "󰇙 {ifname} (No IP) 󱘖 󰇙",
+        "format-disconnected": "󰇙 No internet ⚠ 󰇙",
+        "format-alt": "󰇙 {ifname}: {ipaddr}/{cidr} 󰇙"
+    },
+    "pulseaudio": {
+        "scroll-step": 5,
+        "format": "{volume}% {icon}{format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        // "format-source": " {volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "󰥰",
+            "headset": "󰋎",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "wireplumber": {
+        "scroll-step": 5,
+        "format": "{volume}% {icon}",
+        "format-muted": "  ",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "󰥰",
+            "headset": "󰋎",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", " "]
+        },
+        "on-click": "pavucontrol"
+    },
+    "custom/media": {
+        "format": " {icon}  {} ",
+        "return-type": "json",
+        "format-icons": {
+            "spotify": "",
+            "firefox": "",
+            "default": "󰲸"
+        },
+        "on-click": "playerctl play-pause",
+        "escape": true,
+        "exec": "/usr/bin/python3 $HOME/.config/waybar/custom_scripts/mediaplayer.py" 
+    },
+    "custom/wlogout": {
+        "on-click": "wlogout",
+        "format": "󰣇"
+    },
+    "sway/language": {
+        "format": "󰌌 {}"
+    }
+}
+
