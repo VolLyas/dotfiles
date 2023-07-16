@@ -2,7 +2,7 @@
 
 THEME="Arc-Dark"
 ICONS="Tela-dark"
-FONT="Source Code Pro Nerd 12"
+FONT="JetBrainsMono Nerd Font 12"
 CURSOR="Breeze"
 
 SCHEMA="gsettings set org.gnome.desktop.interface"

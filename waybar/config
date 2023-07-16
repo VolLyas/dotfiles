@@ -3,20 +3,29 @@
     "position": "top",
     "height": 30,
     "spacing": 4,
-    "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad"],
+    "modules-left": [ "custom/wlogout", "sway/workspaces", "sway/scratchpad"],
     "modules-center": ["custom/media"],
-    "modules-right": ["tray", "sway/language", "pulseaudio", "network", "keyboard-state", "clock", "custom/wlogout"],
+    "modules-right": ["tray", "sway/language", "pulseaudio", "network", "clock"],
     "sway/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
         "warp-on-scroll": false,
         "format": " {icon} ",
         "format-icons": {
-            "firefox": "",
+            "1": "󰎤",
+            "2": "󰎧",
+            "3": "󰎪",
+            "4": "󰎭",
+            "5": "󰎱",
+            "6": "󰎳",
+            "7": "󰎶",
+            "8": "󰎹",
+            "9": "󰎼",
+            "10": "󰽽",
             "urgent": "",
-            "focused": "",
             "default": ""
-        }
+        },
+        "sort-by-number": true
     },
     "keyboard-state": {
         "numlock": true,
@@ -27,9 +36,6 @@
             "unlocked": ""
         }
     },
-    "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
-    },
     "sway/scratchpad": {
         "format": "{icon} {count}",
         "show-empty": false,
@@ -37,21 +43,15 @@
         "tooltip": true,
         "tooltip-format": "{app}: {title}"
     },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
-    },
     "tray": {
         "icon-size": 21,
         "spacing": 10
     },
     "clock": {
         "timezone": "Europe/Kyiv",
-        "format": "{:󰥔 %H:%M 󰃮 %d %B,%Y}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><big>{calendar}</big></tt>"
+        "format": "{:󰥔 %H:%M 󰃮 %B,%d}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><big>{calendar}</big></tt>",
+        "on-click": "gsimplecal"
     },
     "network": {
         "format-ethernet": "󰇧",
@@ -95,16 +95,18 @@
         "on-click": "pavucontrol"
     },
     "custom/media": {
-        "format": " {icon}  {} ",
+        "format": " {icon} {}",
         "return-type": "json",
         "format-icons": {
             "spotify": "",
-            "firefox": "",
-            "default": "󰲸"
+            "firefox": "󰈹",
+            "default": "󰌳"
         },
-        "on-click": "playerctl play-pause",
         "escape": true,
-        "exec": "/usr/bin/python3 $HOME/.config/waybar/custom_scripts/mediaplayer.py" 
+        "exec": "$HOME/.config/waybar/modules/mediaplayer.py",
+        "on-click": "playerctl play-pause",
+        "on-click-right": "playerctl next",
+        "on-click-middle": "playerctl stop"
     },
     "custom/wlogout": {
         "on-click": "wlogout",

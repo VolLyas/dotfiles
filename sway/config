@@ -3,7 +3,7 @@ include ~/.config/sway/config.d/*
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/Pictures/Nordic.jpg fill
+output * bg ~/Pictures/Endy_vector_satelliet.png fill
 
 ### Input configuration
 #
