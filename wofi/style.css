@@ -22,6 +22,10 @@ window {
     margin: 1rem;
 }
 
+#outer-box {
+    margin: 0.5rem;
+}
+
 image {
     margin-right: 0.5rem;
 }
