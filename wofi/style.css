@@ -1,0 +1,28 @@
+window {
+    font-size: 25px;
+    font-family: "SorceCodePro Nerd Font";
+    background-color: #4c566a;
+    border-radius: 1rem;
+    margin: 5px;
+}
+
+#entry:selected{
+    background: linear-gradient(90deg,#88c0d0, #b48ead);
+}
+
+#text:selected {
+    color: #4c566a;
+}
+
+#input {
+    margin: 0.5rem;
+}
+
+#inner-box {
+    margin: 1rem;
+}
+
+image {
+    margin-right: 0.5rem;
+}
+
