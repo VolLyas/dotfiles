@@ -1,0 +1,34 @@
+### Variables
+set $mod Mod4
+set $term kitty
+set $menu bemenu-run -H 38 --fn 'Monospace bold 18' --hp '6' --tb '#f1c40f' --fb '#262626' --nb '#262626' --hb '#262626' --fbb '#262626' --ab '#262626' --tf '#262626' --sf '#d65d0e' --hf '#f1c40f'
+
+exec gentoo-pipewire-launcher &
+exec udiskie &  
+exec dunst &
+
+output * bg /home/vl/Pictures/pirates_ship.png fill
+
+input type:keyboard {
+    xkb_layout us,ua
+    xkb_options grp:alt_shift_toggle
+}
+
+default_border pixel 2
+gaps inner 5
+gaps outer 2
+
+assign [app_id="firefox"] 1
+assign [class="Code"] 2
+assign [class="kitty"] 3
+assign [class="discord"] 4
+assign [class="steam"] 5
+
+#
+# Status Bar:
+#
+bar {
+    swaybar_command waybar
+}
+
+include ./config.d/*
