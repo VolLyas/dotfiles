@@ -19,3 +19,4 @@ QtProject.conf
 vlc/
 ristretto/accels.scm
 pavucontrol.ini
+slstatus-1.0/config.h
