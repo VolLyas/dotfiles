@@ -11,8 +11,8 @@ static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display 
 static const int showsystray        = 1;        /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "monospace:size=14" };
-static const char dmenufont[]       = "monospace:size=14";
+static const char *fonts[]          = { "JetBrainsMono NF:size=14" };
+static const char dmenufont[]       = "JetBrainsMono NF:size=14";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -70,6 +70,7 @@ static const char *codecmd[]  = { "code", NULL };
 static const char *filecmd[]  = { "thunar", NULL };
 static const char *discordcmd[]  = { "discord", NULL };
 static const char *steamcmd[]  = { "steam", NULL };
+static const char *flameshotcmd[]  = { "flameshot", "gui", NULL };
 
 static const char *up_vol[]   = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%",   NULL };
 static const char *down_vol[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%",   NULL };
@@ -87,6 +88,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_e,      spawn,          {.v = filecmd } },
 	{ MODKEY,                       XK_s,      spawn,          {.v = steamcmd } },
 	{ MODKEY,                       XK_d,      spawn,          {.v = discordcmd } },
+	{ 0,                            XK_Print,  spawn,          {.v = flameshotcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_Left,   focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_Right,  focusstack,     {.i = -1 } },
@@ -119,6 +121,7 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+	{ MODKEY|ShiftMask,             XK_r,      quit,           {1} }, 
 	{ 0,							XF86XK_AudioMute, spawn, {.v = mute_vol } },
     { 0, 							XF86XK_AudioLowerVolume, spawn, {.v = down_vol } },
     { 0, 							XF86XK_AudioRaiseVolume, spawn, {.v = up_vol } },

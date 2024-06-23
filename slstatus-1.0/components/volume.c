@@ -241,7 +241,7 @@
 		snd_mixer_detach(mixer, devname);
 		snd_mixer_close(mixer);
 
-		return !(sw1 || sw2) ? "" : volume == -1 ? NULL : bprintf(" %.0f%%", (volume-min)*100./(max-min));
+		return !(sw1 || sw2) ? "" : volume == -1 ? NULL : bprintf("  %.0f%%", (volume-min)*100./(max-min));
 	}
 #else
 	#include <sys/soundcard.h>
