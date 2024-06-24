@@ -2,7 +2,6 @@ Code/
 dconf/
 discord/
 gtk-*
-user*
 xfce4/
 xarchiver/
 nitrogen/
@@ -22,3 +21,4 @@ pavucontrol.ini
 slstatus-1.0/config.h
 celeste/
 google-chrome/
+user-dirs*
