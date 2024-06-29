@@ -65,16 +65,13 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "kitty", NULL };
-static const char *browsercmd[]  = { "google-chrome-stable", NULL };
+static const char *browsercmd[]  = { "firefox", NULL };
 static const char *codecmd[]  = { "code", NULL };
 static const char *filecmd[]  = { "thunar", NULL };
 static const char *discordcmd[]  = { "discord", NULL };
 static const char *steamcmd[]  = { "steam", NULL };
 static const char *flameshotcmd[]  = { "flameshot", "gui", NULL };
 
-static const char *up_vol[]   = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%",   NULL };
-static const char *down_vol[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%",   NULL };
-static const char *mute_vol[] = { "pactl", "set-sink-mute",   "@DEFAULT_SINK@", "toggle", NULL };
 static const char *playpause[]   = { "playerctl", "play-pause", NULL };
 static const char *pl_next[] = { "playerctl", "next", NULL };
 static const char *pl_prev[] = { "playerctl", "previous", NULL };
@@ -122,9 +119,6 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ MODKEY|ShiftMask,             XK_r,      quit,           {1} }, 
-	{ 0,							XF86XK_AudioMute, spawn, {.v = mute_vol } },
-    { 0, 							XF86XK_AudioLowerVolume, spawn, {.v = down_vol } },
-    { 0, 							XF86XK_AudioRaiseVolume, spawn, {.v = up_vol } },
 	{ 0,							XF86XK_AudioPlay, spawn, {.v = playpause } },
     { 0, 							XF86XK_AudioNext, spawn, {.v = pl_next } },
     { 0, 							XF86XK_AudioPrev, spawn, {.v = pl_prev } },
